@@ -1,9 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './pages/home/home';
-import InventoryScreen from './pages/inventory/inventory';
-import FinancesScreen from './pages/finances/finances';
-import App from './MainScreen'; 
+import App from './App';
+import HomeScreen from './pages/home/HomeScreen'; // Adjust the import path for HomeScreen
+import InventoryScreen from './pages/inventory/InventoryScreen'; // Adjust the import path for InventoryScreen
+import FinancesScreen from './pages/finances/FinancesScreen'; // Adjust the import path for FinancesScreen
 
 const Stack = createNativeStackNavigator();
 
