@@ -1,0 +1,165 @@
+/* Common Styles */
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0073e6;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Navigation Page Styles */
+  
+  .navigation-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .navigation-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navigation-list li {
+    margin: 10px 0;
+  }
+  
+  /* Home Page Styles */
+  
+  .home-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .home-page img {
+    max-width: 100%;
+  }
+  
+  .inventory-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .action-button {
+    text-align: center; 
+    margin: 0 auto; 
+    display: block; 
+    margin-top: 20px; 
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Finances Page Styles */
+  
+  .finances-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Add Page Styles */
+  
+  .add-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+.image-grid {
+    max-width: 400px; 
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+  }
+  
+  .grid-item {
+    width: 120px; 
+    text-align: center;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
