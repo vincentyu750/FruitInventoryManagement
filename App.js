@@ -15,7 +15,6 @@ function AppNavigator() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Inventory" component={InventoryScreen} />
         <Stack.Screen name="Finances" component={FinancesScreen} />
-        {/* Add more screens if needed */}
       </Stack.Navigator>
     </NavigationContainer>
   );
