@@ -9,7 +9,6 @@ const LoginScreen = ({ navigation }) => {
   const handleLogin = () => {
     // Implement your authentication logic here
     // Check username and password against stored values or API
-    // If authentication is successful, navigate to the main screen
     if (username === 'A' && password === 'B') {
       navigation.navigate('Home'); // Navigate to the main screen
     } else {
@@ -20,8 +19,10 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10 }}>
-        Fruit Inventory Management App
+      <Text style={{ fontSize: 24, 
+                     fontWeight: 'bold', 
+                     marginBottom: 10 }}>
+        Fruit Inventory<br></br>Management App
       </Text>
       <TextInput
         style={styles.input}

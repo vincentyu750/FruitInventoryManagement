@@ -66,12 +66,12 @@ const AddScreen = ({ navigation }) => {
         <View style={{ flexDirection: 'row', marginBottom: 5, width: '80%' }}>
           <TextInput
             style={{
-              flex: 1,
+              width: '48%', // Adjusted width for the Price input
               height: 40,
               borderColor: 'gray',
               borderWidth: 1,
               padding: 10,
-              marginRight: 5,
+              marginRight: '4%', // Added margin for separation
             }}
             placeholder="Price"
             value={newFruitPrice}
@@ -79,7 +79,7 @@ const AddScreen = ({ navigation }) => {
           />
           <TextInput
             style={{
-              flex: 1,
+              width: '48%', // Adjusted width for the Quantity input
               height: 40,
               borderColor: 'gray',
               borderWidth: 1,
@@ -99,7 +99,7 @@ const AddScreen = ({ navigation }) => {
           backgroundColor: '#0073e6',
           padding: 10,
           borderRadius: 5,
-          width: '80%',
+          width: '80%', // Adjusted width for the button
           alignItems: 'center',
         }}
         onPress={addFruit}
@@ -108,6 +108,7 @@ const AddScreen = ({ navigation }) => {
       </TouchableOpacity>
     </View>
   );
+  
 };
 
 export default AddScreen;
