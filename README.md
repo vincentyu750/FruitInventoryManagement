@@ -1,75 +1,44 @@
+# Fruit Inventory Management App
 
+## Getting Started
 
-# Fruit Inventory Management ADR
+To start the mobile app, run the following command in your terminal:
 
-Oct 19, 2023
+```
+npm start
+```
 
-Context: Our team is developing a mobile application named "Fruit Inventory Management."
+## Login Page
+This is the initial page of the app, where users can sign in to access their fruit inventory management application.
 
-This application is designed to help users manage their inventory of various fruits, including
+## Credentials
+- Username: "A"
+- Password: "B"
 
-tracking the name, price, and quantity of each fruit
+## Home Page
+The home page connects to the Inventory page and Finances page. Click the "Inventory" button to navigate there initially.
 
-1\. Hybrid
+## Inventory Page
+Displays the list of fruits currently in the system.
 
-  We have chosen to develop the mobile application using React Native.
+Add: Opens the Add page to input new fruits.
+Remove: Removes the latest entered fruit (dequeues the last fruit in the list).
+Home: Navigates back to the home screen, sending information needed for the Finances screen.
+Add Page
+An easy way for users to input fruits from a selection of 9 fruits. Users can select a fruit and enter the price and quantity.
 
-  React Native allows us to build a single codebase that can run on both iOS and Android
+### Example
+- Selected: Pineapple
+- Price: 4.99
+- Quantity: 3
 
-platforms. This choice simplifies development and maintenance and enables us to leverage a
+The fruit will be added to the list. Navigate back to the home page afterward.
 
-large community of developers and open-source libraries.
+## Finances Page
+Displays the total fruit value and the total amount of fruits from the Inventory page.
 
-2\. Ui Toolkit
+Save Button
+Click on the "Save" button to save the finances.
 
-  We have decided to stick with React Native's built-in components for the user interface,
-
-with a focus on a clean and user-friendly design.
-
-  Leveraging React Native's built-in components ensures a consistent and native-like user
-
-interface while simplifying development and providing a familiar user experience.
-
-3\. Navigation
-
-  We will use the React Navigation library for navigation within the application.
-
-  React Navigation is a widely adopted library that provides a flexible and customizable
-
-navigation solution for React Native applications. It will enable us to create a smooth and
-
-intuitive navigation experience for users.
-
-4\. Hardware
-
-  We will be using the users device for local storage
-
-  By having local storage it will meet the requirements of storing one json file for the user's
-
-fruits data.
-
-5\. Data Storage
-
-  We will use AsyncStorage for local data storage.
-
-
-  AsyncStorage is optimal for this situation because the amount of data being used will
-
-only be a json file. By having it local on the users end device, it will allow for no need for other
-
-proprietary libraries and require other node modules. React Native that allows us to store small
-
-amounts of data on the device.
-
-6\. Additional Frameworks or Technology Stacks
-
-We have chosen to develop the app using React Native.
-
-React native allows us to build on top of a single codebase of which is compatible with
-
-iOS and Android. As well as allow us to store data locally on the users end device. This choice
-
-simplifies development and maintenance and enables us to leverage a large community of
-
-developers and open-source libraries.
-
+## Save Page
+A simple page displaying that the finances were saved, then navigates back to the login screen.
