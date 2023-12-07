@@ -26,108 +26,88 @@ const AddScreen = ({ navigation }) => {
 
     const newFruit = {
       name: selectedFruit.name,
-      price: newFruitPrice,
-      quantity: newFruitQuantity,
+      price: parseFloat(newFruitPrice) || 0, 
+      quantity: parseInt(newFruitQuantity) || 0,
     };
 
     navigation.navigate('Inventory', { newFruit });
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Add Fruit</Text>
-
-        {/* Fruit Grid */}
-        <FlatList
-            data={fruitsData}
-            numColumns={3}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => (
-            <TouchableOpacity style={styles.fruitItem} onPress={() => setSelectedFruit(item)}>
-                <Image source={item.image} style={styles.fruitImage} resizeMode="cover" />
-            </TouchableOpacity>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 20 }}>Add Fruit</Text>
+  
+      {/* Fruit Grid */}
+      <FlatList
+        data={fruitsData}
+        numColumns={3}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={{ margin: 5 }}
+            onPress={() => setSelectedFruit(item)}
+          >
+            <Image
+              source={item.image}
+              style={{ width: 100, height: 100, borderRadius: 5 }}
+              resizeMode="cover"
+            />
+          </TouchableOpacity>
         )}
       />
-
+  
       {/* Selected Fruit */}
-      <View style={styles.selectedFruitContainer}>
-        <Text style={styles.selectedFruitText}>Selected: {selectedFruit ? selectedFruit.name : 'None'}</Text>
-
+      <View style={{ alignItems: 'center', marginBottom: 20 }}>
+        <Text style={{ fontSize: 18, marginBottom: 10 }}>
+          Selected: {selectedFruit ? selectedFruit.name : 'None'}
+        </Text>
+  
         {/* Price and Quantity Text Inputs */}
-        <View style={styles.inputContainer}>
+        <View style={{ flexDirection: 'row', marginBottom: 5, width: '80%' }}>
           <TextInput
-            style={styles.input}
+            style={{
+              flex: 1,
+              height: 40,
+              borderColor: 'gray',
+              borderWidth: 1,
+              padding: 10,
+              marginRight: 5,
+            }}
             placeholder="Price"
             value={newFruitPrice}
             onChangeText={(text) => setNewFruitPrice(text)}
           />
           <TextInput
-            style={styles.input}
+            style={{
+              flex: 1,
+              height: 40,
+              borderColor: 'gray',
+              borderWidth: 1,
+              padding: 10,
+            }}
             placeholder="Quantity"
             value={newFruitQuantity}
             onChangeText={(text) => setNewFruitQuantity(text)}
           />
         </View>
       </View>
-
+  
       {/* Add Fruit Button */}
-      <TouchableOpacity style={styles.addButton} onPress={addFruit}>
-        <Text style={styles.buttonText}>Add Fruit</Text>
+      <TouchableOpacity
+        style={{
+          marginBottom: 100,
+          backgroundColor: '#0073e6',
+          padding: 10,
+          borderRadius: 5,
+          width: '80%',
+          alignItems: 'center',
+        }}
+        onPress={addFruit}
+      >
+        <Text style={{ color: 'white', textAlign: 'center', marginTop: 10 }}>Add Fruit</Text>
       </TouchableOpacity>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  selectedFruitContainer: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  selectedFruitText: {
-    fontSize: 18,
-    marginBottom: 10,
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    marginBottom: 10,
-  },
-  input: {
-    flex: 1,
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    padding: 10,
-    marginRight: 5,
-  },
-  fruitItem: {
-    margin: 5,
-  },
-  fruitImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 5,
-  },
-  addButton: {
-    backgroundColor: '#0073e6',
-    padding: 10,
-    borderRadius: 5,
-    width: '80%',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: 'white',
-    textAlign: 'center',
-  },
-});
 
 export default AddScreen;

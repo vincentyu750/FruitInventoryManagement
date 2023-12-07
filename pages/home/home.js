@@ -9,7 +9,7 @@ function HomeScreen({ navigation, route }) {
     const calculateTotals = () => {
       // Check if the route params contain the values
       const { totalNetValue, totalQuantity } = route.params || {};
-      
+
       // Do something with the values if they exist
       if (totalNetValue !== undefined && totalQuantity !== undefined) {
         console.log('Total Net Value:', totalNetValue);
@@ -18,6 +18,9 @@ function HomeScreen({ navigation, route }) {
         setTotalQuantity(totalQuantity);
       }
     };
+
+    // Call the function on initial mount
+    calculateTotals();
 
     // Subscribe to the focus event
     const unsubscribe = navigation.addListener('focus', calculateTotals);

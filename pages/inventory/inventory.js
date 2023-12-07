@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function InventoryScreen({ navigation, route }) {
@@ -35,7 +35,6 @@ function InventoryScreen({ navigation, route }) {
   }, [fruits]);
 
   useEffect(() => {
-    // Check if there is a new fruit from AddScreen
     const newFruit = route.params?.newFruit;
 
     if (newFruit) {
@@ -43,8 +42,12 @@ function InventoryScreen({ navigation, route }) {
       if (!newFruit.price) {
         newFruit.price = 0; // Set a default value or handle it as per your requirements
       }
-
+    
+      // Log the new fruit
+      console.log('New Fruit Added:', newFruit);
+    
       setFruits((prevFruits) => [...prevFruits, newFruit]);
+    
     }
   }, [route.params?.newFruit]);
 
@@ -74,9 +77,23 @@ function InventoryScreen({ navigation, route }) {
     showMessage('Last fruit removed successfully.');
   };
 
-  // Function to navigate to the Add screen
   const navigateToAdd = () => {
     navigation.navigate('Add');
+  };
+
+  const navigateToHome = () => {
+    navigation.navigate('Home', {
+      totalNetValue: calculateTotalNetValue(),
+      totalQuantity: calculateTotalAmountOfFruits(),
+    });
+  };
+
+  const calculateTotalNetValue = () => {
+    return fruits.reduce((total, item) => total + (item.price || 0) * item.quantity, 0);
+  };
+
+  const calculateTotalAmountOfFruits = () => {
+    return fruits.reduce((total, item) => total + item.quantity, 0);
   };
 
   return (
@@ -92,7 +109,7 @@ function InventoryScreen({ navigation, route }) {
           {fruits.map((item, index) => (
             <View key={index} style={{ flexDirection: 'row', borderBottomWidth: 1, padding: 5 }}>
               <Text style={{ flex: 1 }}>{item.name}</Text>
-              <Text style={{ flex: 1 }}>{item.price ? `$${item.price.toFixed(2)}` : 'N/A'}</Text>
+              <Text style={{ flex: 1 }}>{`$${item.price.toFixed(2)}`}</Text>
               <Text style={{ flex: 1 }}>{item.quantity}</Text>
             </View>
           ))}
@@ -121,6 +138,17 @@ function InventoryScreen({ navigation, route }) {
           onPress={removeFruit}
         >
           <Text style={{ color: 'white', textAlign: 'center' }}>Remove</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#0073e6',
+            padding: 10,
+            borderRadius: 5,
+            marginRight: 10,
+          }}
+          onPress={navigateToHome}
+        >
+          <Text style={{ color: 'white', textAlign: 'center' }}>Home</Text>
         </TouchableOpacity>
       </View>
 

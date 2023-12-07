@@ -34,7 +34,7 @@ function FinancesScreen({ route, navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <View style={{ marginBottom: 20 }}>
-        <Text style={{ fontSize: 16, color: '#333' }}>Total Net Value</Text>
+        <Text style={{ fontSize: 16, color: '#333' }}>Total Fruit Value</Text>
         <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#0073e6' }}>
           ${totalNetValue.toFixed(2)}
         </Text>
