@@ -4,9 +4,17 @@
 
 To start the mobile app, run the following command in your terminal:
 
+First Install the needed node modules
+```
+npm install
+```
+
+Then start the application 
 ```
 npm start
 ```
+
+Afterwards using Expo Go Scan the QR code in the console. 
 
 ## Login Page
 This is the initial page of the app, where users can sign in to access their fruit inventory management application.
