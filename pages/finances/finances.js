@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
+
 function FinancesScreen({ route, navigation }) {
   const [totalNetValue, setTotalNetValue] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);

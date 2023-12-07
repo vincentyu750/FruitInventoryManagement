@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 function SaveScreen({ navigation }) {
   const handleRedirect = () => {
     // Redirect to the home page
-    navigation.navigate('Home');
+    navigation.navigate('Login');
   };
 
   return (
@@ -20,7 +20,7 @@ function SaveScreen({ navigation }) {
         }}
         onPress={handleRedirect}
       >
-        <Text style={{ color: 'white', textAlign: 'center' }}>Go to Home</Text>
+        <Text style={{ color: 'white', textAlign: 'center' }}>Go to Login</Text>
       </TouchableOpacity>
     </View>
   );

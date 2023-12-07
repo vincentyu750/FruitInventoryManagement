@@ -1,6 +1,6 @@
 // LoginScreen.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -10,8 +10,8 @@ const LoginScreen = ({ navigation }) => {
     // Implement your authentication logic here
     // Check username and password against stored values or API
     // If authentication is successful, navigate to the main screen
-    if (username === 'exampleUser' && password === 'examplePassword') {
-      navigation.navigate('Main'); // Navigate to the main screen
+    if (username === 'A' && password === 'B') {
+      navigation.navigate('Home'); // Navigate to the main screen
     } else {
       // Display an error message for unsuccessful login
       console.error('Invalid credentials');
@@ -19,22 +19,58 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View>
-      <Text>Login Screen</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Login Screen</Text>
       <TextInput
+        style={styles.input}
         placeholder="Username"
         value={username}
         onChangeText={(text) => setUsername(text)}
       />
       <TextInput
+        style={styles.input}
         placeholder="Password"
         secureTextEntry
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
-      <Button title="Login" onPress={handleLogin} />
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  input: {
+    height: 40,
+    width: '80%',
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 10,
+    padding: 10,
+  },
+  button: {
+    backgroundColor: '#0073e6',
+    padding: 10,
+    borderRadius: 5,
+    width: '80%',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+  },
+});
 
 export default LoginScreen;

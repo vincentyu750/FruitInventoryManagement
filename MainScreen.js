@@ -16,6 +16,10 @@ const App = ({ navigation }) => { // Rename the component to App
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Finances')}>
           <Text style={styles.buttonText}>Finances</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Add')}>
+          <Text style={styles.buttonText}>Add</Text>
+        </TouchableOpacity>
       </View>
 
       <Text style={styles.appName}>Fruit Inventory Management</Text>
