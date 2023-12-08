@@ -22,7 +22,7 @@ const LoginScreen = ({ navigation }) => {
       <Text style={{ fontSize: 24, 
                      fontWeight: 'bold', 
                      marginBottom: 10 }}>
-        Fruit Inventory<br></br>Management App
+        Fruit Inventory Management App
       </Text>
       <TextInput
         style={styles.input}
